@@ -6,7 +6,7 @@ CodeAcademy is requesting that students create a fully functional YELP clone tha
 
 ## Features
 
-You will be able to input cuisine and location in order to find restaurants in the area. You can order you search results by rating, reviews, and best match.
+You will be able to input cuisine type and location in order to find restaurants in the area. You can order you search results by rating, reviews, and best match.
 
 ## Technologies
 
