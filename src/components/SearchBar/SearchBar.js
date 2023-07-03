@@ -12,7 +12,7 @@ function SearchBar(){
         'Most Reviewed': 'review_count'
     }
 
-    const objectList = Object.keys(sortingOptions).map((option, index) => <li key={'option_' + index}>{option}</li>)
+    const objectList = Object.keys(sortingOptions).map((option, index) => <li key={option[index]}>{option}</li>)
 
     return (
         <div>

@@ -4,15 +4,12 @@ import './BusinessList.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
-function BusinessList(){
+function BusinessList(props){
     return( 
     <div className='businessList'>
-        <Business />
-        <Business />
-        <Business />
-        <Business />
-        <Business />
-        <Business /> 
+        {
+            props.businesses.map(business => <Business business={business} key={business.name}/>)
+        } 
     </div>
  
     )
