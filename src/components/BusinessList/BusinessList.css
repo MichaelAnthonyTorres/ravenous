@@ -2,5 +2,7 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 50px 10%;
+    max-width: 1199px;
+    margin: auto;
+    padding: 50px;
 }
