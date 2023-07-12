@@ -35,16 +35,10 @@
     font-size: small;
 }
 
-
-li:hover{
-    border-bottom: 1px solid #f0c36c;
-    color: #f0c36c;
-    transition: color .75s;
-}
-
-.active {
+#active {
     border-bottom: 1px solid #cca353;
     color: #cca353;
+    transition: color .75s
 
 }
 

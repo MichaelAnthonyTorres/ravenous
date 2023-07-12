@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState }from 'react'
+import search from './utils/yelp';
 import SearchBar from './components/SearchBar/SearchBar'
 import BusinessList from './components/BusinessList/BusinessList'
 import './App.css';
@@ -6,24 +7,15 @@ import './App.css';
 
 
 function App() {
-  const business =
-    {
-      imageSrc: 'https://content.codecademy.com/programs/react/ravenous/pizza.jpg',
-      name: 'MarginOtto Pizzeria',
-      address: '1010 Paddington Way',
-      city: 'Flavortown',
-      state: 'NY',
-      zipCode: '10101',
-      category: 'Italian',
-      rating: 4.5,
-      reviewCount: 90
-  }
+  const [businesses, setBusinesses] = useState([])
 
-  const businesses = [business, business, business, business, business, business, business]
-
+  const searchYelp = async (term, location, sortBy) => {
+   const businesses = await search(term, location, sortBy);
+   setBusinesses(businesses)
+  };
   return (
     <div className="App">
-      <SearchBar />
+      <SearchBar searchYelp={searchYelp}/>
       <BusinessList businesses = {businesses}/>
     </div>
   );

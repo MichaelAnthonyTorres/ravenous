@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './SearchBar.css'
 
 
-function SearchBar(){
+function SearchBar({searchYelp}){
 
     const sortingOptions = {
         'Best Match': 'best_match',
@@ -37,11 +37,21 @@ function SearchBar(){
 
     const handleSearch = (event) =>{
         event.preventDefault();
-        console.log(`Searching Yelp for ${term} in ${location}, with ${sortBy} `)
+        searchYelp(term, location, sortBy)
 
     }
 
-    const objectList = Object.keys(sortingOptions).map((option) => <li onClick={()=>{handleSortByChange(sortingOptions[option])}} className={toggleActive(sortingOptions[option])} key={sortingOptions[option]}>{option}</li>)
+    const objectList = Object
+    .keys(sortingOptions)
+    .map((option) => 
+        <li 
+            onClick={()=>{handleSortByChange(sortingOptions[option])}} 
+            id={toggleActive(sortingOptions[option])} 
+            key={sortingOptions[option]}
+        >                
+        {option}
+        </li>
+        )
 
     return (
         <div>
@@ -52,8 +62,8 @@ function SearchBar(){
                 <ul className='searchBarOptions'>{objectList}</ul>
                 <form onSubmit={handleSearch}>
                     <div className='inputOptions'>
-                        <input id='input-1' placeholder='Business Name' onChange={handleTermChange} />
-                        <input id='input-2' placeholder='Where' onChange={handleLocationChange} />
+                        <input id='input-1' placeholder='ex. name, category, cuisine' onChange={handleTermChange} />
+                        <input id='input-2' placeholder='Where would you like you to eat' onChange={handleLocationChange} />
                     </div>
                     <div>
                         <button type='submit'> Lets Go </button>
