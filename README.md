@@ -10,7 +10,7 @@ You will be able to input cuisine type and location in order to find restaurants
 
 ## Technologies
 
-`VS Code` will be the code editor used for this project. Along with chrome dev tools and bootstrap for the styling.
+`VS Code` will be the code editor used for this project. Along with chrome dev tools and CSS for the styling.
 
 ## What you need for this project
 
